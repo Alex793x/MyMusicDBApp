@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <title>Title</title>
+</head>
+<body>
+  <h1 id="create--header">Please fill out:</h1>
+
+  <form action="/createNew" class="create--form" method="post">
+      <div class="form-section company--Fill">
+          <label for="company_name">
+              Record Company Name:
+              <input id="company_name" type="text" name="company_name" placeholder="Enter name">
+          </label>
+          <label for="address">
+              Record Company Address:
+              <input id="address" type="text" name="address" placeholder="Enter address">
+          </label>
+          <label for="city">
+              Record Company City:
+              <input id="city" type="text" name="city" placeholder="Enter city location">
+          </label>
+          <label for="phonenumber">
+              Record Company TEL:
+              <input id="phonenumber" type="text" name="phonenumber" placeholder="Enter phone number ">
+          </label>
+      </div>
+      <div class="form-section artist--fill">
+          <label for="first_name">
+              Artist First name:
+              <input id="first_name" type="text" name="first_name" placeholder="Enter firstname">
+          </label>
+          <label for="last_name">
+              Artist Last name:
+              <input id="last_name" type="text" name="last_name" placeholder="Enter lastname">
+          </label>
+          <label for="birth_year">
+              Artist Birth year:
+              <input id="birth_year" type="text" name="birth_year" placeholder="Enter year of birth">
+          </label>
+          <label for="record_company_id">
+              Record Company id:
+              <input id="record_company_id" type="text" name="record_company_id" placeholder="Enter record company id">
+          </label>
+      </div>
+      <div class="form-section albums--fill">
+          <label for="title">
+              Album Title:
+              <input id="title" type="text" name="title" placeholder="Enter album title">
+          </label>
+          <label for="amount">
+              Album Songs:
+              <input id="amount" type="text" name="amount" placeholder="Enter total amount of songs">
+          </label>
+          <label for="release_year">
+              Album Release year:
+              <input id="release_year" type="text" name="release_year" placeholder="Enter release year">
+          </label>
+          <label for="album_fk_record_company_id">
+              Record Company id:
+              <input id="album_fk_record_company_id" type="text" name="record_company_id" placeholder="Enter Record Company Id">
+          </label>
+          <label for="album_fk_artists_id">
+              Artists id:
+              <input id="album_fk_artists_id" type="text" name="artists_id" placeholder="Enter Artists Id">
+          </label>
+
+      </div>
+      <div class="form-section tracks--fill">
+          <label for="track_title">
+              Track Title:
+              <input id="track_title" type="text" name="track_title" placeholder="Enter song title">
+          </label>
+          <label for="duration">
+              Tracks duration:
+              <input id="duration" type="text" name="duration" placeholder="Enter song duration">
+          </label>
+          <label for="tracks_fk_albums_id">
+              Albums id:
+              <input id="tracks_fk_albums_id" type="text" name="albums_id" placeholder="Enter Albums Id">
+          </label>
+
+      </div>
+      <label for="submit">
+          <input id="submit" type="submit" value="Submit to DB" style="color: #4CAF50">
+      </label>
+  </form>
+
+
+</body>
+</html>

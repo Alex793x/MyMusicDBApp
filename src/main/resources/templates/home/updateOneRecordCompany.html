@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+  <title>Update Record Company</title>
+</head>
+<body>
+<h1 id="create--header">Edit Record Company:</h1>
+
+<form action="/updateRecordCompany" class="create--form" method="post">
+  <input type="hidden" name="record_company_id" th:value="${record_company.record_company_id}">
+  <div class="form-section company--Fill">
+    <label for="company_name">
+      Record Company Name:
+      <input id="company_name" type="text" name="company_name" th:value="${record_company.company_name}">
+    </label>
+    <label for="address">
+      Record Company Address:
+      <input id="address" type="text" name="address" th:value="${record_company.address}">
+    </label>
+    <label for="city">
+      Record Company City:
+      <input id="city" type="text" name="city" th:value="${record_company.city}">
+    </label>
+    <label for="phonenumber">
+      Record Company TEL:
+      <input id="phonenumber" type="text" name="phonenumber" th:value="${record_company.phonenumber}">
+    </label>
+  </div>
+  <label for="submit">
+    <input id="submit" type="submit" value="Save Changes" style="color: #4CAF50">
+  </label>
+</form>
+
+
+</body>
+</html>

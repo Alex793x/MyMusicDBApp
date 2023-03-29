@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+  <title>Create Album</title>
+</head>
+<body>
+<h1 id="create--header">Add new Album:</h1>
+
+<form action="/addAlbum" class="create--form" method="post">
+  <div class="form-section albums--fill">
+    <label for="title">
+      Album Title:
+      <input id="title" type="text" name="title" placeholder="Enter album title">
+    </label>
+    <label for="amount">
+      Album Songs:
+      <input id="amount" type="text" name="amount" placeholder="Enter total amount of songs">
+    </label>
+    <label for="release_year">
+      Album Release year:
+      <input id="release_year" type="text" name="release_year" placeholder="Enter release year">
+    </label>
+    <label for="album_fk_record_company_id">
+      Record Company id:
+      <input id="album_fk_record_company_id" type="text" name="record_company_id" placeholder="Enter Record Company Id">
+    </label>
+    <label for="album_fk_artists_id">
+      Artists id:
+      <input id="album_fk_artists_id" type="text" name="artists_id" placeholder="Enter Artists Id">
+    </label>
+
+  </div>
+  <label for="submit">
+    <input id="submit" type="submit" value="Submit to DB" style="color: #4CAF50">
+  </label>
+</form>
+
+
+</body>
+</html>

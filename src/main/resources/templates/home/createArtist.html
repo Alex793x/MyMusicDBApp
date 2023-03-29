@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+  <title>Title</title>
+</head>
+<body>
+<h1 id="create--header">Add new Artist:</h1>
+
+<form action="/addArtist" class="create--form" method="post">
+  <div class="form-section artist--fill">
+    <label for="first_name">
+      Artist First name:
+      <input id="first_name" type="text" name="first_name" placeholder="Enter firstname">
+    </label>
+    <label for="last_name">
+      Artist Last name:
+      <input id="last_name" type="text" name="last_name" placeholder="Enter lastname">
+    </label>
+    <label for="birth_year">
+      Artist Birth year:
+      <input id="birth_year" type="text" name="birth_year" placeholder="Enter year of birth">
+    </label>
+    <label for="record_company_id">
+      Record Company id:
+      <input id="record_company_id" type="text" name="record_company_id" placeholder="Enter record company id">
+    </label>
+  </div>
+  <label for="submit">
+    <input id="submit" type="submit" value="Submit to DB" style="color: #4CAF50">
+  </label>
+</form>
+
+
+</body>
+</html>

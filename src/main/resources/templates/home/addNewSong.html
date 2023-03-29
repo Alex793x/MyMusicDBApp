@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+  <title>Create Track</title>
+</head>
+<body>
+<h1 id="create--header">Add new Track:</h1>
+
+<form action="/addNewSong" class="create--form" method="post">
+  <div class="form-section tracks--fill">
+    <label for="track_title">
+      Track Title:
+      <input id="track_title" type="text" name="title" placeholder="Enter song title">
+    </label>
+    <label for="duration">
+      Tracks duration:
+      <input id="duration" type="text" name="duration" placeholder="Enter song duration">
+    </label>
+    <input type="hidden" name="albums_id" th:value="${albums.albums_id}">
+
+  </div>
+  <label for="submit">
+    <input id="submit" type="submit" value="Submit to DB" style="color: #4CAF50">
+  </label>
+</form>
+
+
+</body>
+</html>

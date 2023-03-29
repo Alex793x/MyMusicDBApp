@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Section */
+header {
+    background-color: #e1e1e1;
+}
+nav > ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5rem;
+}
+
+ul > li {
+    padding: 0 20px;
+}
+
+#logo--li {
+    margin-right: auto;
+}
+
+#logo {
+    height: 4rem;
+    width: auto;
+}
+
+/* Hero Section*/
+
+.hero--section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 6rem;
+}
+
+.hero--section p {
+    font-size: 1.4rem;
+}
+
+
+/* Data Section */
+.data {
+    text-align: center;
+
+}
+.data--section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5rem;
+}
+
+table{
+    border-collapse: collapse;
+    font-size: 1.4rem;
+}
+
+table td {
+    padding: 0 2rem;
+}
+
+.data--section table th {
+    background-color: lightblue;
+}
+.data--section table td, th{
+    border: 1px solid black;
+    text-align: center;
+    padding: 4px;
+
+}
+
+.data--section tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+.action--button {
+    padding: 0.3rem 2rem;
+}
+
+
+
+
+/* Create Form  */
+#create--header {
+    text-align: center;
+    padding: 20px;
+}
+
+.create--form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.create--form .form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.create--form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.create--form input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.create--form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.create--form button[type="submit"]:hover {
+    background-color: #45a049;
+}
+

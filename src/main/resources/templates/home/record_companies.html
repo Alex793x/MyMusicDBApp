@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+  <title>RecordCompanies</title>
+</head>
+<body>
+
+<header class="header--section">
+  <nav class="nav--bar">
+    <ul>
+      <li id="logo--li"><a th:href="@{/}"><img id="logo" src="/images/logo.png" alt=""></a></li>
+      <li><a th:href="@{/recordCompanies}">RECORD COMPANIES</a></li>
+      <li><a th:href="@{/}">ARTISTS</a></li>
+      <li><a th:href="@{/albums}">ALBUMS</a></li>
+      <li><a th:href="@{/tracks}">TRACKS</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero--section">
+  <img src="/images/recordCompany-img.png" alt="picture of headphones">
+  <p>In the realm of music's call, <br>
+    A record company stands tall,<br>
+    A beacon bright for artists' dreams,<br>
+    Guiding talents to gleaming streams.<br><br>
+
+    With passion, vision, they unite,<br>
+    To set the stage, to share the light,<br>
+    Through trials and triumphs, they pave the way,<br>
+    Nurturing voices that sing and sway.<br><br>
+
+    The artists' dreams, like stars above,<br>
+    In record company's care, they trust and love,<br>
+    A partnership strong, a bond that's deep,<br>
+    Together they climb the mountain steep.<br><br>
+
+    In songs and albums, tales unfold,<br>
+    Of hope, despair, and hearts of gold,<br>
+    The record company, a steady hand,<br>
+    Supporting artists, they understand.<br>
+
+    So celebrate this union strong,<br>
+    A dance of dreams, a lifelong song,<br>
+    For record companies and artists, side by side,<br>
+    Create the magic that will never die.</p>
+</div>
+
+<div class="data">
+  <h1>Records Companies</h1>
+  <section class="data--section">
+    <table>
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Record Company Name</th>
+        <th>Record Company Address</th>
+        <th>Record Company City</th>
+        <th>Record Company TEL</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="record_company: ${record_companies}">
+        <td th:text="${record_company.record_company_id}"></td>
+        <td th:text="${record_company.company_name}"></td>
+        <td th:text="${record_company.address}"></td>
+        <td th:text="${record_company.city}"></td>
+        <td th:text="${record_company.phonenumber}"></td>
+        <td>
+          <a th:href="@{'/updateOneRecordCompany/' + ${record_company.record_company_id}}" style="text-decoration: none">
+            <button class="action--button" style="background-color: #4CAF50">Edit</button>
+          </a>
+          <a th:href="@{'/deleteOneRecordCompany/' + ${record_company.record_company_id}}" style="text-decoration: none">
+            <button class="action--button" style="background-color: red">Delete</button>
+          </a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <a href="/createRecordCompany">
+    <button class="btn-create, btn">Add Record Company to Database</button>
+  </a>
+  <a href="/createAll">
+    <button class="btn-create, btn" id="btn-create">Add New Record Company to Database</button>
+  </a>
+</div>
+
+
+</body>
+</html>

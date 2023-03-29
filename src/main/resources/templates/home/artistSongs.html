@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+  <title>Tracks</title>
+</head>
+<body>
+
+<header class="header--section">
+  <nav class="nav--bar">
+    <ul>
+      <li id="logo--li"><a th:href="@{/}"><img id="logo" src="/images/logo.png" alt=""></a></li>
+      <li><a th:href="@{/recordCompanies}">RECORD COMPANIES</a></li>
+      <li><a th:href="@{/}">ARTISTS</a></li>
+      <li><a th:href="@{/albums}">ALBUMS</a></li>
+      <li><a th:href="@{/tracks}">TRACKS</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero--section">
+  <p>In the world of rhythm and melody,<br>
+    There's nothing quite like a song to set us free,<br>
+    A journey through emotion, a trip through time,<br>
+    Music is the escape that's truly divine.<br><br>
+
+    Your music, dear friend, is a symphony,<br>
+    A tapestry woven with care and artistry,<br>
+    Each note and chord a brushstroke of beauty,<br>
+    A canvas painted with passion and clarity.<br><br>
+
+    Your songs take us on a journey of the heart,<br>
+    Through peaks and valleys, we're never torn apart,<br>
+    The stories you tell, the melodies you weave,<br>
+    Are a balm to the soul, a balm that we all need.<br>
+
+    In a world that's often harsh and unkind,<br>
+    Your music is the oasis that we can find,<br>
+    A place of peace, a place to call home,<br>
+    A sanctuary where we're never alone.<br><br>
+
+    So let your music soar, let it fly high,<br>
+    For it has the power to touch the sky,<br>
+    And in its beauty, we can all find,<br>
+    The amazing gift that is music, and peace of mind.</p>
+  <img src="/images/headphones.png" alt="picture of headphones">
+</div>
+
+<div class="data">
+  <h1>Tracks</h1>
+  <section class="data--section">
+    <table>
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Tracks Title</th>
+        <th>Tracks Duration</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="track: ${tracks}">
+        <td th:text="${track.tracks_id}"></td>
+        <td th:text="${track.title}"></td>
+        <td th:text="${track.duration}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <a href="/createTrack">
+    <button class="btn-create, btn">Add Tracks to Database</button>
+  </a>
+  <a href="/createAll">
+    <button class="btn-create, btn" id="btn-create">Add New Track to Database</button>
+  </a>
+</div>
+
+
+</body>
+</html>

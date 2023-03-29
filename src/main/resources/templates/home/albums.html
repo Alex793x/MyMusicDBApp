@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <title>Albums</title>
+</head>
+<body>
+
+<header class="header--section">
+    <nav class="nav--bar">
+        <ul>
+            <li id="logo--li"><a th:href="@{/}"><img id="logo" src="/images/logo.png" alt=""></a></li>
+            <li><a th:href="@{/recordCompanies}">RECORD COMPANIES</a></li>
+            <li><a th:href="@{/}">ARTISTS</a></li>
+            <li><a th:href="@{/albums}">ALBUMS</a></li>
+            <li><a th:href="@{/tracks}">TRACKS</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="hero--section">
+    <img src="/images/albums-img.png" alt="picture of headphones">
+    <p>In the realm of heartfelt sound, <br>
+        Where melodies and beats abound,<br>
+        The albums made with love and care,<br>
+        Hold stories deep, emotions rare.<br><br>
+
+        With every note, a tale unfolds,<br>
+        Of joy and sorrow, of young and old,<br>
+        A symphony of memories,<br>
+        A journey through life's mysteries.<br><br>
+
+        These albums, crafted from the heart,<br>
+        Are where the artists' passions start,<br>
+        Each track a testament, sincere,<br>
+        To all the love they hold so dear.<br>
+
+        In harmony, they share their truth,<br>
+        A gift to cherish, a fountain of youth,<br>
+        The albums made with tender love,<br>
+        Hold treasures vast, sent from above.<br><br>
+
+        So let us honor these precious gifts,<br>
+        Where artists' souls take flight and lift,<br>
+        For in these albums, love's embrace,<br>
+        We find connection, time, and space.</p>
+</div>
+
+<div class="data">
+    <h1>Albums</h1>
+    <section class="data--section">
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Album Title</th>
+                <th>Album Total Songs</th>
+                <th>Album Release Year</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="album: ${albums}">
+                <td th:text="${album.albums_id}"></td>
+                <td th:text="${album.title}"></td>
+                <td th:text="${album.amount}"></td>
+                <td th:text="${album.release_year}"></td>
+                <td>
+                    <a th:href="@{/albumRecordCompany(record_company_id=${album.record_company_id})}" style="text-decoration: none">
+                        <button class="action--button" style="background-color: deepskyblue">Record Company</button>
+                    </a>
+                    <a th:href="@{'albumsSongs/' + ${album.albums_id}}" style="text-decoration: none">
+                        <button class="action--button" style="background-color: cadetblue">Songs</button>
+                    </a>
+                    <a th:href="@{'/updateOneAlbum/' + ${album.albums_id}}" style="text-decoration: none">
+                        <button class="action--button" style="background-color: #4CAF50">Edit</button>
+                    </a>
+                    <a th:href="@{'/deleteOneAlbum/' + ${album.albums_id}}" style="text-decoration: none">
+                        <button class="action--button" style="background-color: red">Delete</button>
+                    </a>
+                    <a th:href="@{'/addNewSong/' + ${album.albums_id}}" style="text-decoration: none">
+                        <button class="action--button" style="background-color: slateblue">Add Song</button>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <a href="/createAlbum">
+        <button class="btn-create, btn">Add Album to Database</button>
+    </a>
+    <a href="/createAll">
+        <button class="btn-create, btn" id="btn-create">Add New Album to Database</button>
+    </a>
+</div>
+
+
+</body>
+</html>

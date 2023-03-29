@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+    <title>MyMusicApp</title>
+</head>
+<body>
+
+<header class="header--section">
+    <nav class="nav--bar">
+        <ul>
+            <li id="logo--li"><a th:href="@{/}"><img id="logo" src="/images/logo.png" alt=""></a></li>
+            <li><a th:href="@{/recordCompanies}">RECORD COMPANIES </a></li>
+            <li><a th:href="@{/}">ARTISTS</a></li>
+            <li><a th:href="@{/albums}">ALBUMS</a></li>
+            <li><a th:href="@{/tracks}">TRACKS</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="hero--section">
+    <p>In the realm of dreams and hues,<br>
+        An artist weaves their vibrant muse,<br>
+        With every stroke, a story told,<br>
+        Of love and loss, of young and old.<br><br>
+
+        Their hands, the vessel, their heart, the guide,<br>
+        As passion surges like the tide,<br>
+        Each canvas a world, a boundless space,<br>
+        To share their truth, their soul's embrace.<br><br>
+
+        The artist's journey, a winding road,<br>
+        A quest to lighten a heavy load,<br>
+        Through shadows cast by doubt and fear,<br>
+        They persevere, their vision clear.<br><br>
+
+        A melody of colors, a dance of light,<br>
+        The artist's spirit takes its flight,<br>
+        In every line, a purpose found,<br>
+        As creativity knows no bound.<br><br>
+
+        For in their work, they bare their soul,<br>
+        A piece of them in every scroll,<br>
+        A legacy, a timeless art,<br>
+        The artist's gift, a sacred part.</p>
+    <img src="/images/artist-img.png" alt="picture of headphones">
+</div>
+
+<div class="data">
+    <h1>Artists</h1>
+    <section class="data--section">
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Birth Year</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="artist: ${artists}">
+                <td th:text="${artist.artists_id}"></td>
+                <td th:text="${artist.first_name}"></td>
+                <td th:text="${artist.last_name}"></td>
+                <td th:text="${artist.birth_year}"></td>
+                <td>
+                    <a th:href="@{/artistAlbum(artist_id=${artist.artists_id})}" style="text-decoration: none">
+                        <button class="action--button" style="background-color: coral">Albums</button>
+                    </a>
+                    <a th:href="@{/artistSongs(artists_id=${artist.artists_id})}" style="text-decoration: none">
+                        <button class="action--button" style="background-color: cadetblue">Songs</button>
+                    </a>
+                    <a th:href="@{/artistRecordCompany(record_company_id=${artist.record_company_id})}" style="text-decoration: none">
+                        <button class="action--button" style="background-color: deepskyblue">Record Company</button>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <a href="/createArtist">
+        <button class="btn-create, btn">Add Artist Database</button>
+    </a>
+    <a href="/createAll">
+        <button class="btn-create, btn" id="btn-create">Add to Music Database</button>
+    </a>
+</div>
+
+
+</body>
+</html>
